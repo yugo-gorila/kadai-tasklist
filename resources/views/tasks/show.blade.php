@@ -10,6 +10,10 @@
             <td>{{ $task->id }}</td>
         </tr>
         <tr>
+            <th>ユーザーid</th>
+            <td>{{ $task->user_id }}</td>
+        </tr>
+        <tr>
             <th>ステータス</th>
             <td>{{ $task->status }}</td>
         </tr>
@@ -22,6 +26,7 @@
     {{--タスク編集ページへのリンク--}}
     
     {!! link_to_route("tasks.edit","このタスクを編集",["task" => $task->id],["class" => "btn btn-light"]) !!}
+    
     
     {{--タスク削除フォーム--}}
     {!! Form::model($task,["route" => ["tasks.destroy",$task->id],"method" => "delete"]) !!}
